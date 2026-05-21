@@ -77,7 +77,7 @@ const Index = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <motion.h1
+            <motion.h2
               className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ const Index = () => {
             >
               Transforme <span className="gradient-text">dados</span> em{" "}
               <span className="gradient-text">inteligência</span>
-            </motion.h1>
+            </motion.h2>
 
             <motion.p
               className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto"
@@ -173,7 +173,8 @@ const Index = () => {
                 O Poder da Inteligência Artificial como Alavanca de <span className="gradient-text">Transformação</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Amplify é uma empresa de educação corporativa e consultoria em Inteligência Artificial que conecta estratégia, inovação e aprendizado aplicado.
+                Amplify é uma empresa de educação corporativa e consultoria em Inteligência Artificial que conecta
+                estratégia, inovação e aprendizado aplicado.
               </p>
 
               <div className="grid grid-cols-2 gap-6">
@@ -225,17 +226,20 @@ const Index = () => {
                 {
                   icon: Users,
                   title: "Capacitação",
-                  description: "Treinamentos práticos e imersivos para sua equipe dominar IA e aplicar no dia a dia corporativo.",
+                  description:
+                    "Treinamentos práticos e imersivos para sua equipe dominar IA e aplicar no dia a dia corporativo.",
                 },
                 {
                   icon: Brain,
                   title: "Consultoria e Serviços",
-                  description: "Análise estratégica e implementação de soluções de IA personalizadas para acelerar resultados.",
+                  description:
+                    "Análise estratégica e implementação de soluções de IA personalizadas para acelerar resultados.",
                 },
                 {
                   icon: Lightbulb,
                   title: "Comunidades",
-                  description: "Networking exclusivo com profissionais e líderes que estão transformando seus negócios com IA.",
+                  description:
+                    "Networking exclusivo com profissionais e líderes que estão transformando seus negócios com IA.",
                 },
               ].map((service, index) => (
                 <StaggerItem key={index}>
@@ -293,9 +297,7 @@ const Index = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-lg md:text-xl font-heading font-bold text-white">
-                      {caseItem.name}
-                    </h3>
+                    <h3 className="text-lg md:text-xl font-heading font-bold text-white">{caseItem.name}</h3>
                   </div>
                 </motion.div>
               </StaggerItem>
@@ -341,7 +343,9 @@ const Index = () => {
               <blockquote className="relative">
                 <div className="text-6xl text-primary/20 absolute -top-4 -left-4">"</div>
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pl-8">
-                  Como ecossistema tecnológico, líder da construção brasileira, a Inteligência Artificial tem sido um dos temas centrais dos nossos debates. Por isso, teremos a Amplify no ConstruSummit para aprofundar a discussão sobre o impacto da IA no futuro do setor.
+                  Como ecossistema tecnológico, líder da construção brasileira, a Inteligência Artificial tem sido um
+                  dos temas centrais dos nossos debates. Por isso, teremos a Amplify no ConstruSummit para aprofundar a
+                  discussão sobre o impacto da IA no futuro do setor.
                 </p>
                 <footer className="mt-6 pl-8">
                   <p className="font-heading font-semibold text-foreground">Guilherme Quandt</p>
