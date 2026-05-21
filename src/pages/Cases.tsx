@@ -28,7 +28,8 @@ const cases = [
 
 const testimonials = [
   {
-    quote: "\"Como ecossistema tecnológico líder da construção brasileira, a Inteligência Artificial tem sido um dos temas centrais dos nossos debates. Por isso, teremos a Amplify no ConstruSummit para aprofundar a discussão sobre o impacto da IA no futuro do setor.\"",
+    quote:
+      '"Como ecossistema tecnológico líder da construção brasileira, a Inteligência Artificial tem sido um dos temas centrais dos nossos debates. Por isso, teremos a Amplify no ConstruSummit para aprofundar a discussão sobre o impacto da IA no futuro do setor."',
     name: "Guilherme Quandt",
     role: "Diretor de Marketing do Ecossistema Sienge",
     image: depoimentoGuilherme,
@@ -74,11 +75,7 @@ const Cases = () => {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
             {cases.map((caseItem, index) => (
               <StaggerItem key={index}>
-                <motion.div
-                  className="group cursor-pointer"
-                  whileHover={{ y: -4 }}
-                  transition={{ duration: 0.2 }}
-                >
+                <motion.div className="group cursor-pointer" whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-4 bg-card">
                     <img
                       src={caseItem.image}
@@ -87,9 +84,7 @@ const Cases = () => {
                     />
                   </div>
                   <p className="text-sm text-muted-foreground mb-1">{caseItem.category}</p>
-                  <h3 className="text-xl md:text-2xl font-heading font-semibold text-foreground">
-                    {caseItem.title}
-                  </h3>
+                  <h2 className="text-xl md:text-2xl font-heading font-semibold text-foreground">{caseItem.title}</h2>
                   <div className="mt-4 border-t border-border" />
                 </motion.div>
               </StaggerItem>
@@ -155,12 +150,8 @@ const Cases = () => {
                 {testimonials[currentTestimonial].quote}
               </p>
               <div>
-                <p className="font-heading font-semibold text-foreground">
-                  {testimonials[currentTestimonial].name}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonials[currentTestimonial].role}
-                </p>
+                <p className="font-heading font-semibold text-foreground">{testimonials[currentTestimonial].name}</p>
+                <p className="text-sm text-muted-foreground">{testimonials[currentTestimonial].role}</p>
               </div>
             </div>
           </motion.div>
@@ -172,10 +163,15 @@ const Cases = () => {
         <div className="container mx-auto px-4">
           <FadeInUp className="text-center space-y-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold">
-              Vamos falar sobre <em className="font-light not-italic italic text-muted-foreground">seu projeto em IA?</em>
+              Vamos falar sobre{" "}
+              <em className="font-light not-italic italic text-muted-foreground">seu projeto em IA?</em>
             </h2>
             <div className="flex justify-center">
-              <a href="https://wa.me/5511918252109?text=Olá! Gostaria de falar sobre meu projeto em IA." target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://wa.me/5511918252109?text=Olá! Gostaria de falar sobre meu projeto em IA."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <motion.div
                   className="w-14 h-14 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 transition-colors"
                   whileHover={{ scale: 1.1 }}

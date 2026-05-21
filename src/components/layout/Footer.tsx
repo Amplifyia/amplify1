@@ -10,11 +10,7 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div className="space-y-4">
             <Link to="/" className="inline-block">
-              <img 
-                src={logoAmplify} 
-                alt="Amplify" 
-                className="h-8 w-auto"
-              />
+              <img src={logoAmplify} alt="Amplify" className="h-8 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground">
               Transformando dados em inteligência para impulsionar sua empresa com IA.
@@ -52,7 +48,7 @@ const Footer = () => {
 
           {/* Links Rápidos */}
           <div>
-            <h3 className="font-heading font-semibold mb-4">Links Rápidos</h3>
+            <p className="font-heading font-semibold mb-4">Links Rápidos</p>
             <ul className="space-y-2">
               <li>
                 <Link to="/sobre" className="text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -74,20 +70,29 @@ const Footer = () => {
 
           {/* Soluções */}
           <div>
-            <h3 className="font-heading font-semibold mb-4">Soluções</h3>
+            <p className="font-heading font-semibold mb-4">Soluções</p>
             <ul className="space-y-2">
               <li>
-                <Link to="/solucoes/capacitacoes" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  to="/solucoes/capacitacoes"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
                   Capacitação
                 </Link>
               </li>
               <li>
-                <Link to="/solucoes/servicos-consultoria" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  to="/solucoes/servicos-consultoria"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
                   Serviços e Consultoria
                 </Link>
               </li>
               <li>
-                <Link to="/solucoes/comunidades" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  to="/solucoes/comunidades"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
                   Comunidades
                 </Link>
               </li>
@@ -96,11 +101,16 @@ const Footer = () => {
 
           {/* Contato */}
           <div>
-            <h3 className="font-heading font-semibold mb-4">Contato</h3>
+            <p className="font-heading font-semibold mb-4">Contato</p>
             <ul className="space-y-3">
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-primary" />
-                <a href="https://wa.me/5511918252109" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                <a
+                  href="https://wa.me/5511918252109"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
                   +55 11 91825-2109
                 </a>
               </li>

@@ -40,7 +40,6 @@ const formatTime = (timeStr: string) => {
   return timeStr.substring(0, 5);
 };
 
-
 const Agenda = () => {
   const [eventos, setEventos] = useState<Evento[]>([]);
   const [loading, setLoading] = useState(true);
@@ -71,9 +70,7 @@ const Agenda = () => {
 
   const tiposUnicos = ["Todos", ...Array.from(new Set(eventos.map((e) => e.event_type).filter(Boolean)))];
 
-  const eventosFiltrados = filtroAtivo === "Todos"
-    ? eventos
-    : eventos.filter((e) => e.event_type === filtroAtivo);
+  const eventosFiltrados = filtroAtivo === "Todos" ? eventos : eventos.filter((e) => e.event_type === filtroAtivo);
 
   return (
     <Layout>
@@ -83,9 +80,9 @@ const Agenda = () => {
           <FadeInUp>
             <div className="flex items-center gap-3 mb-8">
               <CalendarDays className="h-6 w-6 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground italic">
+              <h1 className="text-3xl md:text-4xl font-heading font-bold text-foreground italic">
                 Calendário de Eventos
-              </h2>
+              </h1>
             </div>
           </FadeInUp>
 
@@ -160,9 +157,9 @@ const Agenda = () => {
                           </Badge>
                         )}
                       </div>
-                      <h3 className="text-lg font-heading font-semibold text-foreground mb-4 flex-grow">
+                      <h2 className="text-lg font-heading font-semibold text-foreground mb-4 flex-grow">
                         {evento.name}
-                      </h3>
+                      </h2>
                       <div className="space-y-2 text-sm text-muted-foreground">
                         {evento.start_date && (
                           <div className="flex items-center gap-2">
@@ -200,7 +197,10 @@ const Agenda = () => {
                 return (
                   <StaggerItem key={evento.id}>
                     {isFilosofia ? (
-                      <Link to="/agenda/filosofia" className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-colors h-full flex flex-col cursor-pointer">
+                      <Link
+                        to="/agenda/filosofia"
+                        className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-colors h-full flex flex-col cursor-pointer"
+                      >
                         {cardContent}
                       </Link>
                     ) : (
@@ -234,8 +234,9 @@ const Agenda = () => {
                   </h2>
                 </Link>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  CEO & Cofundador da AMPLIFY. Empreendedor serial com mais de 25 anos de experiência em tecnologia e inovação,
-                  especialista em Inteligência Artificial, palestrante internacional, autor e professor de MBA.
+                  CEO & Cofundador da AMPLIFY. Empreendedor serial com mais de 25 anos de experiência em tecnologia e
+                  inovação, especialista em Inteligência Artificial, palestrante internacional, autor e professor de
+                  MBA.
                 </p>
                 <Link
                   to="/founders/fernando-godoy"
@@ -254,7 +255,11 @@ const Agenda = () => {
         <div className="container mx-auto px-4">
           <FadeInUp>
             <div className="relative rounded-3xl overflow-hidden">
-              <img src={palestraEvento} alt="Palestra Amplify" className="absolute inset-0 w-full h-full object-cover" />
+              <img
+                src={palestraEvento}
+                alt="Palestra Amplify"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-background/85 backdrop-blur-sm" />
               <div className="relative z-10 text-center py-16 px-6 md:px-16">
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground italic mb-4">
