@@ -11,6 +11,21 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 
+const LogoImage = () => <img src={logoAmplify} alt="Amplify" className="h-8 w-auto" />;
+const LogoLink = () => (
+  <Link to="/" className="flex items-center">
+    <LogoImage />
+  </Link>
+);
+const Logo = () => {
+  if (location.pathname !== "/") return <LogoLink />;
+  return (
+    <h1>
+      <LogoLink />
+    </h1>
+  );
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -22,9 +37,7 @@ const Navbar = () => {
     { name: "Cases", path: "/cases" },
   ];
 
-  const navLinksAfter = [
-    { name: "Agenda", path: "/agenda" },
-  ];
+  const navLinksAfter = [{ name: "Agenda", path: "/agenda" }];
 
   const conteudoLinks = [
     { name: "Aprenda", path: "/aprenda" },
@@ -41,14 +54,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img 
-              src={logoAmplify} 
-              alt="Amplify" 
-              className="h-8 w-auto"
-            />
-          </Link>
+          <Logo />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -58,7 +64,7 @@ const Navbar = () => {
                 to={link.path}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
-                  isActive(link.path) ? "text-primary" : "text-muted-foreground"
+                  isActive(link.path) ? "text-primary" : "text-muted-foreground",
                 )}
               >
                 {link.name}
@@ -71,9 +77,7 @@ const Navbar = () => {
                 <button
                   className={cn(
                     "flex items-center text-sm font-medium transition-colors hover:text-primary",
-                    location.pathname.startsWith("/solucoes")
-                      ? "text-primary"
-                      : "text-muted-foreground"
+                    location.pathname.startsWith("/solucoes") ? "text-primary" : "text-muted-foreground",
                   )}
                 >
                   Soluções
@@ -90,14 +94,14 @@ const Navbar = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-          {/* Links after Soluções */}
+            {/* Links after Soluções */}
             {navLinksAfter.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
-                  isActive(link.path) ? "text-primary" : "text-muted-foreground"
+                  isActive(link.path) ? "text-primary" : "text-muted-foreground",
                 )}
               >
                 {link.name}
@@ -112,7 +116,7 @@ const Navbar = () => {
                     "flex items-center text-sm font-medium transition-colors hover:text-primary",
                     location.pathname === "/blog" || location.pathname === "/aprenda"
                       ? "text-primary"
-                      : "text-muted-foreground"
+                      : "text-muted-foreground",
                   )}
                 >
                   Conteúdo
@@ -135,7 +139,7 @@ const Navbar = () => {
               to="/solucoes/comunidades"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive("/solucoes/comunidades") ? "text-primary" : "text-muted-foreground"
+                isActive("/solucoes/comunidades") ? "text-primary" : "text-muted-foreground",
               )}
             >
               Club
@@ -146,7 +150,7 @@ const Navbar = () => {
               to="/amplifiers"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive("/amplifiers") ? "text-primary" : "text-muted-foreground"
+                isActive("/amplifiers") ? "text-primary" : "text-muted-foreground",
               )}
             >
               Amplifiers
@@ -157,7 +161,7 @@ const Navbar = () => {
               to="/tools"
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isActive("/tools") ? "text-primary" : "text-muted-foreground"
+                isActive("/tools") ? "text-primary" : "text-muted-foreground",
               )}
             >
               Tools
@@ -165,15 +169,18 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <Button asChild className="glow-cyan">
-              <a href="https://wa.me/5511918252109?text=Olá! Gostaria de falar com um especialista." target="_blank" rel="noopener noreferrer">Fale com o Especialista</a>
+              <a
+                href="https://wa.me/5511918252109?text=Olá! Gostaria de falar com um especialista."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fale com o Especialista
+              </a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground"
-          >
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-foreground">
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -188,7 +195,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className={cn(
                   "block text-sm font-medium transition-colors hover:text-primary",
-                  isActive(link.path) ? "text-primary" : "text-muted-foreground"
+                  isActive(link.path) ? "text-primary" : "text-muted-foreground",
                 )}
               >
                 {link.name}
@@ -216,7 +223,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className={cn(
                   "block text-sm font-medium transition-colors hover:text-primary",
-                  isActive(link.path) ? "text-primary" : "text-muted-foreground"
+                  isActive(link.path) ? "text-primary" : "text-muted-foreground",
                 )}
               >
                 {link.name}
@@ -242,7 +249,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className={cn(
                 "block text-sm font-medium transition-colors hover:text-primary",
-                isActive("/solucoes/comunidades") ? "text-primary" : "text-muted-foreground"
+                isActive("/solucoes/comunidades") ? "text-primary" : "text-muted-foreground",
               )}
             >
               Club
@@ -253,7 +260,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className={cn(
                 "block text-sm font-medium transition-colors hover:text-primary",
-                isActive("/amplifiers") ? "text-primary" : "text-muted-foreground"
+                isActive("/amplifiers") ? "text-primary" : "text-muted-foreground",
               )}
             >
               Amplifiers
@@ -264,7 +271,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className={cn(
                 "block text-sm font-medium transition-colors hover:text-primary",
-                isActive("/tools") ? "text-primary" : "text-muted-foreground"
+                isActive("/tools") ? "text-primary" : "text-muted-foreground",
               )}
             >
               Tools
@@ -272,7 +279,12 @@ const Navbar = () => {
 
             <div className="pt-4 space-y-2">
               <Button asChild className="w-full">
-                <a href="https://wa.me/5511918252109?text=Olá! Gostaria de falar com um especialista." target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+                <a
+                  href="https://wa.me/5511918252109?text=Olá! Gostaria de falar com um especialista."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                >
                   Fale com o Especialista
                 </a>
               </Button>
